@@ -9,5 +9,5 @@ pdfplumber
 PyMuPDF
 google-generativeai
 chromadb
-pyttsx3
+gTTs
 langchain_community
