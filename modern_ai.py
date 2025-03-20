@@ -7,7 +7,7 @@ import os
 import pandas as pd
 import matplotlib.pyplot as plt
 from dotenv import load_dotenv
-from langchain.vectorstores import FAISS
+from langchain.vectorstores import chroma
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.document_loaders import PyPDFLoader, TextLoader
@@ -18,18 +18,18 @@ API_KEY = os.getenv("MY_API_KEY")
 genai.configure(api_key=API_KEY)
 
 TEXT_MODEL_NAME = "gemini-1.5-pro-latest"
-text_model = genai.GenerativeModel(TEXT_MODEL_NAME)
+text_model = genai.GenerativeModel(TEXT_MODEL_NAME) 
 
+from gtts import gTTS
+import os
 
-engine = pyttsx3.init()
-engine.setProperty('rate', 150) 
+def speak(text):
+    tts = gTTS(text=text, lang='en')
+    tts.save("output.mp3")
+    os.system("mpg321 output.mp3") 
 
-def speak(text: str):
-    """Speak text using a separate thread to avoid blocking Streamlit UI."""
-    def _speak():
-        engine.say(text)
-        engine.runAndWait()
-    threading.Thread(target=_speak, daemon=True).start()  
+speak("Hello, welcome!")
+
 
 st.set_page_config(page_title="Modern AI", page_icon="🤖")
 st.title("🤖 I am your assistant! How can I help you? 😊")
