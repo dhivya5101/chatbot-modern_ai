@@ -8,4 +8,6 @@ pytesseract
 pdfplumber
 PyMuPDF
 google-generativeai
+pyttsx3
+chromadb
 
