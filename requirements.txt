@@ -10,4 +10,4 @@ PyMuPDF
 google-generativeai
 chromadb
 pyttsx3
-
+langchain_community
