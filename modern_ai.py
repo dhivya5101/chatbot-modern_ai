@@ -13,7 +13,7 @@ from langchain.document_loaders import PyPDFLoader, TextLoader
 
 
 load_dotenv()
-API_KEY = os.getenv("AIzaSyCFaAGmBjwGFRlRI3kRF-kSRSs3WszaoLo")
+API_KEY = os.getenv("MY_API_KEY")
 genai.configure(api_key=API_KEY)
 
 TEXT_MODEL_NAME = "gemini-1.5-pro-latest"
