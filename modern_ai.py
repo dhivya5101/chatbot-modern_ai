@@ -1,4 +1,5 @@
 import streamlit as st
+st.cache_resource.clear()
 import google.generativeai as genai
 import pyttsx3
 import threading
