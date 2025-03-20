@@ -1,0 +1,10 @@
+matplotlib
+pandas
+langchain
+faiss-cpu
+openai
+streamlit
+pytesseract
+pdfplumber
+PyMuPDF
+
